@@ -1,0 +1,586 @@
+.service {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #0891b2;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* Water Types Section */
+.waterTypes {
+  margin-bottom: 60px;
+}
+
+.waterTypes h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0891b2;
+  margin-bottom: 30px;
+}
+
+.waterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.waterCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.waterCard:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.waterImage {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.waterImage img {
+  width: 90%;
+  height: auto;
+  margin-top: 5px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.waterCard:hover .waterImage img {
+  transform: scale(1.05);
+}
+
+.waterCard h3 {
+  padding: 20px 20px 10px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.price {
+  padding: 0 20px 20px;
+  font-size: 1.2rem;
+  color: #0891b2;
+  font-weight: bold;
+}
+
+/* Order Section */
+.orderSection {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.orderSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0891b2;
+  margin-bottom: 30px;
+}
+
+.orderForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #ffffffc8;
+  color: #000;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.formGroup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.totalAmount {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.totalAmount h3 {
+  font-size: 1.3rem;
+  color: #0891b2;
+}
+
+.orderButton {
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.orderButton:hover {
+  background-color: #0e7490;
+}
+
+.orderButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fee2e2;
+  border-radius: 5px;
+}
+
+/* Login Required Message */
+.loginRequired {
+  text-align: center;
+  padding: 30px;
+}
+
+.loginRequired p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.loginButton {
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #0e7490;
+}
+
+/* Simplified Order Success Modal Styles */
+.orderSuccessOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: orderConfirmFadeIn 0.5s ease-out;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes orderConfirmFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes orderConfirmSlideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.orderSuccessModal {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  position: relative;
+  animation: orderConfirmSlideUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(8, 145, 178, 0.2);
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+.closeButton:before, 
+.closeButton:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+.closeButton:before {
+  transform: rotate(45deg);
+}
+
+.closeButton:after {
+  transform: rotate(-45deg);
+}
+
+.successIconContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.successCircleIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  animation: orderConfirmPulse 2s infinite;
+}
+
+@keyframes orderConfirmPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.orderSuccessHeading {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.confirmationMessage {
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.deliveryAddressLabel {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.deliveryAddress {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: rgba(8, 145, 178, 0.05);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.confirmationInfo {
+  margin-top: 20px;
+}
+
+.confirmationInfo p {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.closeModalButton {
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.closeModalButton:hover {
+  background-color: #0e7490;
+}
+
+/* Bengali specific styles for the modal */
+:global([lang='bn']) .orderSuccessHeading,
+:global([lang='bn']) .deliveryAddressLabel,
+:global([lang='bn']) .deliveryAddress,
+:global([lang='bn']) .confirmationInfo p,
+:global([lang='bn']) .closeModalButton {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Responsive adjustments for simplified modal */
+@media (max-width: 576px) {
+  .orderSuccessModal {
+    padding: 25px;
+    max-width: 90%;
+  }
+  
+  .orderSuccessHeading {
+    font-size: 1.5rem;
+  }
+  
+  .deliveryAddressLabel {
+    font-size: 1rem;
+  }
+  
+  .deliveryAddress {
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+  
+  .confirmationInfo p {
+    font-size: 0.95rem;
+  }
+  
+  .closeModalButton {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Original media queries */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .waterGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .orderSection {
+    padding: 20px;
+  }
+}
+
+/* Payment Type Selection Styles */
+.pay {
+  color : black;
+}
+.paymentMethodIconImage{
+  width: 50%;
+  height: auto;
+}
+.paymentTypeOptions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.paymentTypeOption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.paymentTypeOption:hover {
+  border-color: #0891b2;
+  box-shadow: 0 2px 6px rgba(8, 145, 178, 0.1);
+}
+
+.paymentTypeOption.active {
+  border-color: #0891b2;
+  background-color: rgba(8, 145, 178, 0.05);
+}
+
+.radioCircle {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.paymentTypeOption.active .radioCircle {
+  border-color: #0891b2;
+}
+
+.paymentTypeOption.active .radioCircle:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0891b2;
+  border-radius: 50%;
+}
+
+/* Payment Method Grid Styles */
+.paymentMethodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.paymentMethodCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.paymentMethodCard:hover {
+  border-color: #0891b2;
+  box-shadow: 0 4px 8px rgba(8, 145, 178, 0.1);
+  transform: translateY(-2px);
+}
+
+.paymentMethodCard.active {
+  border-color: #0891b2;
+  background-color: rgba(8, 145, 178, 0.05);
+}
+
+.paymentMethodIcon {
+  margin-bottom: 10px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.paymentMethodCard.active .paymentMethodIcon {
+  color: #0891b2;
+}
+
+.paymentMethodLabel {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Bengali specific styles for payment section */
+:global([lang='bn']) .paymentTypeOption span:not(.radioCircle),
+:global([lang='bn']) .paymentMethodLabel {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  font-weight: 600;
+}
+
+/* Responsive styles for payment options */
+@media (max-width: 768px) {
+  .paymentTypeOptions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .paymentMethodIconImage{
+    width: 40%;
+  }
+  .paymentMethodGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .paymentMethodGrid {
+    grid-template-columns: 1fr;
+  }
+  .paymentMethodLabel{
+    width : 80%;
+  }
+  
+  .paymentMethodCard {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+  
+  .paymentMethodIcon {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+} 

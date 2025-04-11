@@ -1,0 +1,153 @@
+.login {
+  width: 100%;
+  min-height: calc(100vh - 140px); /* Adjust based on header and footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm h1 {
+  color: #0077b6;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height:2.7rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #023e8a;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #ffffffc8;
+  color: #000;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.formGroup input:focus {
+  border-color: #0077b6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
+}
+
+.inputError {
+  border-color: #dc3545 !important;
+}
+
+.fieldError {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.errorMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loginButton {
+  background-color: #0077b6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.loginButton:hover {
+  background-color: #023e8a;
+}
+
+.loginButton:disabled {
+  background-color: #99cadf;
+  cursor: not-allowed;
+}
+
+.registerLink {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.registerLink a {
+  color: #0077b6;
+  margin-left: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+}
+
+.loginImage {
+  background: url('/images/login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .loginImage {
+    display: none;
+  }
+  
+  .loginForm h1 {
+    font-size: 1.8rem;
+  }
+  
+  .loginForm {
+    padding: 30px;
+  }
+} 

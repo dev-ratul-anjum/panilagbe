@@ -1,0 +1,908 @@
+.paymentContainer {
+  width: 100%;
+  min-height: 70vh;
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Page Title Styles */
+.pageTitle {
+  font-size: 2.5rem;
+  color: #0891b2;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Loading and Error Styles */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(8, 145, 178, 0.1);
+  border-radius: 50%;
+  border-left-color: #0891b2;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  padding: 20px;
+  background-color: #fee2e2;
+  border-radius: 8px;
+  color: #b91c1c;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* No Orders State */
+.noOrders {
+  text-align: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.noOrders p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.primaryButton {
+  background-color: #0891b2;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primaryButton:hover {
+  background-color: #0e7490;
+}
+
+/* Orders Container Styles */
+.ordersContainer {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Order Card Styles */
+.orderCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.orderCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.orderBasicInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.orderInfoItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderInfoLabel {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.orderInfoValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.orderStatus {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.statusActive {
+  background-color: rgba(8, 145, 178, 0.1);
+  color: #0891b2;
+}
+
+.viewDetailsButton {
+  font-size: 1.2rem;
+  color: #0891b2;
+  transition: transform 0.3s;
+}
+
+.paymentSummaryItem {
+  color : #333;
+  margin-top: 5px;
+}
+
+/* Order Details Styles */
+.orderDetails {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.orderDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.orderDetailsSection {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.orderDetailsSectionTitle {
+  font-size: 1.3rem;
+  color: #0891b2;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.orderDetailsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.detailValue {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Monthly Payments Styles */
+.monthlyPayments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.monthPaymentCard {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.monthInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.monthName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.yearName {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paymentStatus {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.paid {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.due {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.paidDate {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.payNowButton {
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payNowButton:hover {
+  background-color: #0e7490;
+}
+
+.payNowButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Payment History Styles */
+.paymentHistorySection {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.paymentHistorySectionTitle {
+  font-size: 1.3rem;
+  color: #0891b2;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.noPaymentHistory {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.paymentHistoryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.paymentHistoryHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+  gap: 10px;
+  padding: 12px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.paymentHistoryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.paymentHistoryCell {
+  font-size: 0.95rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.paymentMethodBadge {
+  background-color: rgba(8, 145, 178, 0.1);
+  color: #0891b2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Bengali specific styles */
+[lang='bn'] .pageTitle,
+[lang='bn'] .pageSubtitle,
+[lang='bn'] .sectionTitle,
+[lang='bn'] .orderDetailsSectionTitle,
+[lang='bn'] .paymentHistorySectionTitle,
+[lang='bn'] .monthName,
+[lang='bn'] .noPaymentHistory,
+[lang='bn'] .orderInfoLabel,
+[lang='bn'] .orderInfoValue,
+[lang='bn'] .detailLabel,
+[lang='bn'] .detailValue,
+[lang='bn'] .paymentHistoryCell,
+[lang='bn'] .payNowButton,
+[lang='bn'] .statusBadge,
+[lang='bn'] .paymentStatus,
+[lang='bn'] .primaryButton {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+  
+  .orderBasicInfo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .paymentHistoryHeader,
+  .paymentHistoryRow {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  
+  .orderHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .orderStatus {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .orderDetailsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .monthlyPayments {
+    grid-template-columns: 1fr;
+  }
+  
+  .paymentHistoryHeader,
+  .paymentHistoryRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .paymentHistoryHeader div:nth-child(4),
+  .paymentHistoryRow div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .paymentContainer {
+    padding: 40px 0;
+  }
+  
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  
+  .orderDetailsSection, 
+  .paymentHistorySection {
+    padding: 15px;
+  }
+  
+  .orderDetailsSectionTitle,
+  .paymentHistorySectionTitle {
+    font-size: 1.2rem;
+  }
+  
+  .paymentHistoryHeader,
+  .paymentHistoryRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .paymentHistoryHeader div:nth-child(3),
+  .paymentHistoryRow div:nth-child(3),
+  .paymentHistoryHeader div:nth-child(5),
+  .paymentHistoryRow div:nth-child(5) {
+    display: none;
+  }
+  
+  .monthPaymentCard {
+    padding: 12px;
+  }
+}
+
+/* Current Month Payment Styles */
+.currentMonthPayment {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(8, 145, 178, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #0891b2;
+}
+
+.currentMonthLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Toggle Button Styles */
+.monthsToggle {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: #f1f5f9;
+  color: #0891b2;
+}
+
+.toggleIcon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Bengali specific styles for new elements */
+[lang='bn'] .currentMonthLabel,
+[lang='bn'] .toggleButton {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .currentMonthCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .currentMonthStatus {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Previous Months Styles */
+.previousMonths {
+  margin-bottom: 20px;
+}
+
+.monthPaymentItem {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.monthPaymentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.monthYearLabel {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Bengali specific styles for new elements */
+[lang='bn'] .currentMonthLabel,
+[lang='bn'] .toggleButton,
+[lang='bn'] .monthYearLabel {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .monthPaymentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Order Actions Styles */
+.orderActionsContainer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.orderActionsTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.orderActionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.cancelOrderButton,
+.reviewOrderButton {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cancelOrderButton {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.cancelOrderButton:hover {
+  background-color: #fecaca;
+}
+
+.reviewOrderButton {
+  background-color: #e0f2fe;
+  color: #0891b2;
+}
+
+.reviewOrderButton:hover {
+  background-color: #bae6fd;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Confirmation Dialog Styles */
+.confirmDialog {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.confirmDialog h3 {
+  color: #ef4444;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.confirmDialog p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelButton,
+.confirmButton {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cancelButton {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.cancelButton:hover {
+  background-color: #e2e8f0;
+}
+
+.confirmButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.confirmButton:hover {
+  background-color: #dc2626;
+}
+
+.confirmButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Review Modal Styles */
+.reviewModal {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.reviewModal h3 {
+  color: #0891b2;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.ratingContainer {
+  margin-bottom: 20px;
+}
+
+.ratingContainer label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.starRating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  font-size: 1.8rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.activeStar {
+  color: #f59e0b;
+}
+
+.reviewTextArea {
+  margin-bottom: 20px;
+}
+
+.reviewTextArea textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.reviewTextArea textarea:focus {
+  border-color: #0891b2;
+  outline: none;
+}
+
+.submitReviewButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #0891b2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitReviewButton:hover {
+  background-color: #0e7490;
+}
+
+.submitReviewButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.closeButton:before, 
+.closeButton:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: #94a3b8;
+  border-radius: 1px;
+}
+
+.closeButton:before {
+  transform: rotate(45deg);
+}
+
+.closeButton:after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover:before,
+.closeButton:hover:after {
+  background-color: #64748b;
+}
+
+/* Bengali specific styles for new elements */
+[lang='bn'] .orderActionsTitle,
+[lang='bn'] .cancelOrderButton,
+[lang='bn'] .reviewOrderButton,
+[lang='bn'] .confirmDialog h3,
+[lang='bn'] .confirmDialog p,
+[lang='bn'] .cancelButton,
+[lang='bn'] .confirmButton,
+[lang='bn'] .reviewModal h3,
+[lang='bn'] .ratingContainer label,
+[lang='bn'] .submitReviewButton {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .orderActionButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .modalOverlay {
+    padding-top: 60px;
+  }
+  
+  .confirmDialog,
+  .reviewModal {
+    padding: 20px;
+    max-width: 90%;
+  }
+  
+  .star {
+    font-size: 1.5rem;
+  }
+} 
