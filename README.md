@@ -1,4 +1,12 @@
 # Pani Lagbe - Water Delivery Service
+## Live Demo
+
+Visit my live application: [Pani Lagbe](https://panilagbe.onrender.com/)
+
+The backend API is hosted at: [Pani Lagbe API](https://panilagbe-api.onrender.com/)
+
+> Note: The application is optimized for both desktop and mobile devices. For the best experience, please use the latest version of Chrome, Firefox, or Safari.
+
 
 <p align="center">
   <img src="frontend/src/assets/panilagbelogo.png" alt="Pani Lagbe Logo" width="200"/>
