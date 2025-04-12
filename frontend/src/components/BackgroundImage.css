@@ -1,0 +1,11 @@
+.background-image {
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    transition: filter 0.5s ease-in-out;
+  }
+  
+  .background-image.loaded {
+    filter: blur(0);
+  }
+  

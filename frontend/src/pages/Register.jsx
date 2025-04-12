@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Register.module.css';
+import BackgroundImage from '../components/BackgroundImage';
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const Register = ({ language }) => {
   const [formData, setFormData] = useState({
@@ -289,10 +290,14 @@ const Register = ({ language }) => {
             <Link to="/login">{text[language].loginLink}</Link>
           </div>
         </div>
-        
-        <div className={styles.registerImage}>
-          {/* This would typically be an image  */}
-        </div>
+
+        <BackgroundImage
+          src="images/register-background.jpg"
+          placeholder="data:image/jpeg;base64,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"
+          className={styles.registerImage}
+        >
+
+        </BackgroundImage>
       </div>
     </div>
   );

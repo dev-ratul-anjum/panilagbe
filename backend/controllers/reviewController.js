@@ -22,8 +22,7 @@ exports.createReview = async (req, res) => {
     
     res.status(201).json(review);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -38,8 +37,7 @@ exports.getAllReviews = async (req, res) => {
     
     res.json(reviews);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 };
 

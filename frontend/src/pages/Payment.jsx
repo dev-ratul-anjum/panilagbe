@@ -456,17 +456,22 @@ const Payment = ({ language }) => {
         }
       );
       
-      // Show success message
-      toast.success(text[language].reviewSuccess, {
-        className: 'toast'
-      });
-      
       // Reset form and close modal
       setReviewText('');
       setReviewRating(0);
       setShowReviewModal(null);
+
+      // Show success message
+      toast.success(text[language].reviewSuccess, {
+        autoClose: 1500,
+        className: 'toast'
+      });
+      setTimeout(() => {
+        window.location.replace('/reviews');
+      }, 2000);
     } catch (err) {
       toast.error(text[language].error, {
+        autoClose: 2100,
         className: 'toast'
       });
     } finally {

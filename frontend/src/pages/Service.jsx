@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Service.module.css';
 import useAuth from '../hooks/useAuth';
+import BlurImage from '../components/BlurImage';
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Service = ({ language }) => {
@@ -471,7 +472,11 @@ const Service = ({ language }) => {
           <div className={styles.waterGrid}>
             <div className={styles.waterCard} onClick={() => handleOrder('20L')}>
               <div className={styles.waterImage}>
-                <img src="/images/one-bottle.png" alt="20L" />
+                <BlurImage
+                  src="/images/one-bottle.png"
+                  placeholder="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAADoDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAYHCAUCA//EADkQAAEDAwIEAwQFDQAAAAAAAAECAwQABREGEgchMUETFGEIIlGBMlJxksEVJSY3YmVydKGxsrPR/8QAGQEAAwEBAQAAAAAAAAAAAAAAAgQFBgAD/8QAIxEAAgIABgIDAQAAAAAAAAAAAQIAAwQFERIhQTFxEzJhsf/aAAwDAQACEQMRAD8A1TRRRXToVlDXvtK6kser7xa7fZLR5aBOehhT5cWtfhrKc+6pIGcZ6d+9advt7t9ihGVdJSGGs7Ug81LV9VKRzUr0AJrI/ENg3CXOeTo1xMiVNkTlKdaSlza4rKUr904VgAnmcFRHxpzC4f5if7E8XiloA7PvSay0dd13/SVkvDrKWF3CEzLU0lW4ILiArAPfGa7FT/hDrKzX7S9rt8RYi3GHEbZcgOgIWjYkJJSOik8uo7EZweVUClnQoxUiM1utihlOohRRRQQ4UtcR9SnSOjLleENB59lKUMtn6KnVqCEbv2dygT6A0y0h8dURl8JtSec2htMbckk4w4FpKCD8d23HrR1gFwDAsJCnSJWl4s8qOotQNJuFzcSNj78rcGQeyEBGEjPYf9J5d8vsFEh0SGl70qIUQonn92vnptu2uaOacfvU8SNo91VycT3+qTSXfRFEmR4dwfcG84zJKs/OrVdYZzr1MxfeUrBHfM8SfLT7x4trbW08gh0KS6W8KB6ghOQfUVdeDWq7peE3ey6hG+5WpTSg+FBXisuglG5QAysbVAnAyMd81nS2eU864X5zzSdnVL6kk8+nKrb7Ov5OXP1k7AkGS75thCnFuqcX4Ya90ZVz25K8fP4UOYKPj9T0yZybD+y00UUVEmmhSHxzhCdwrv6CstqaaTIQoDOFNuJWPllNPlJ3GH9WOpP5Jf4UdXDj3At+h9SdW6VqaXpNt8SbQpsBJALbyVdfRRFT29m8mVJK3oqTvOfDcdxVJ0yv9AW/iEp/yFIGoFnx5XX6aqt0/dgB3MriualYnqcKxvXRE93y7sTxSgZU4XCOvoRVt4GRpJv+sp1wkNvyy9GiktNlCAhDW4YBJOffOcntUVsJ/OTn8H41cuByt0/WJ/eDf+hFDmHCGe2Snc3Mq1FFFQ5p4VNPaOluw+Dl/cZWW9/gMuLHUIW+2lX2ciR86pdcnVtnh6g01cbVcmQ/ElslpxB+B7g9iDgg9iAaJDtYGCw1BEzlZoc1jRCW2rqFtOpSpCnW1oIyQcZSpQP24FI9zhPCS8XLlEKyo5w47yP3KcLlwX1bZvFb0xeGpUInKG3HVxnB8M4yhR9fd+wUpSuGnE9Tyiq2hwqOSrzrJz891X6r6+Tu8zNW4GxiAB49zlRob3mFEXJsYHVsOKP9Qn+9W32YFvs6g1zAXLVKabXDfKyAMOLS5u6E45JSMZPSprauC2vrg4kXGRBtzROFlcguqx6JRyPzIrSHCPREPQ1ifiRlKfkyHQ9JlLSEqeXtAHIckpAGAntz5kkmlsdejJtU6x3L8JZVZvbTxHqiiio8tT//2Q=="
+                  alt="20L"
+                />
               </div>
               <h3>{text[language].jar20L}</h3>
               <p className={styles.price}>{text[language].waterPrices['20L']} {text[language].tk} {text[language].time}</p>
@@ -479,7 +484,11 @@ const Service = ({ language }) => {
             
             <div className={styles.waterCard} onClick={() => handleOrder('40L')}>
               <div className={styles.waterImage}>
-                <img src="/images/two-bottle.png" alt="40L" />
+                <BlurImage
+                  src="/images/two-bottle.png"
+                  placeholder="data:image/jpeg;base64,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"
+                  alt="40L"
+                />
               </div>
               <h3>{text[language].jar10L}</h3>
               <p className={styles.price}>{text[language].waterPrices['40L']} {text[language].tk} {text[language].time}</p>
@@ -487,7 +496,11 @@ const Service = ({ language }) => {
             
             <div className={styles.waterCard} onClick={() => handleOrder('60L')}>
               <div className={styles.waterImage}>
-                <img src="/images/three-bottle.png" alt="60L" />
+                <BlurImage 
+                  src="/images/three-bottle.png"
+                  placeholder="data:image/jpeg;base64,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"
+                  alt="60L"
+                />
               </div>
               <h3>{text[language].bottle1L}</h3>
               <p className={styles.price}>{text[language].waterPrices['60L']} {text[language].tk} {text[language].time}</p>

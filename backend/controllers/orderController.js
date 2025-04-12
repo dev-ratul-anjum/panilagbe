@@ -124,7 +124,9 @@ exports.createOrder = async (req, res) => {
         `,
       });
     }
-    main().catch(console.error);
+    main().catch((err)=>{
+      console.error('Error sending order confirmation email : ', err.message);
+    });
 
     res.json(order);
   }
@@ -283,7 +285,9 @@ exports.checkoutSuccess = async (req, res) => {
         });
 
       }
-      main().catch(console.error);
+      main().catch((err)=>{
+        console.error('Error sending order confirmation email : ', err.message);
+      });
 
       res.redirect(`${process.env.FRONTEND_URL}/checkout/success/${tranId}`);
   } catch (error) {

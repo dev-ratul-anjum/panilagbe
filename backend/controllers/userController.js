@@ -82,9 +82,10 @@ exports.registerUser = async (req, res) => {
         `,
       });
 
-      console.log("Message sent: %s", info.messageId);
     }
-    main().catch(console.error);
+    main().catch((err)=>{
+      console.error('Error sending order confirmation email : ', err.message);
+    });
 
     // Create JWT
     const payload = {
@@ -112,8 +113,7 @@ exports.registerUser = async (req, res) => {
       }
     );
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -162,8 +162,7 @@ exports.loginUser = async (req, res) => {
       }
     );
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -178,8 +177,7 @@ exports.getUserProfile = async (req, res) => {
     }
     res.json(user);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -206,7 +204,6 @@ exports.updateUserProfile = async (req, res) => {
     
     res.json(user);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: err.message });
   }
 }; 

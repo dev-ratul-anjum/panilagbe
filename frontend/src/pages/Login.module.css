@@ -125,9 +125,6 @@
 }
 
 .loginImage {
-  background: url('/images/login-bg.jpg');
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;

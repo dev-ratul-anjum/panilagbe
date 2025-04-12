@@ -52,6 +52,7 @@ const Reviews = ({ language }) => {
       try {
         setLoading(true);
         const response = await axios.get(`${BACKEND_URL}/api/reviews`);
+   
         setReviews(response.data);
         setError(null);
       } catch (err) {
@@ -174,10 +175,10 @@ const Reviews = ({ language }) => {
                   <div className={styles.reviewHeader}>
                     <div className={styles.userInfo}>
                       <div className={styles.userAvatar}>
-                        {getUserInitials(review.userName)}
+                        {getUserInitials(review.user.name)}
                       </div>
                       <div className={styles.userData}>
-                        <h3 className={styles.userName}>{review.userName}</h3>
+                        <h3 className={styles.userName}>{review.user.name}</h3>
                         <p className={styles.reviewDate}>{formatDate(review.createdAt)}</p>
                       </div>
                     </div>
@@ -191,7 +192,7 @@ const Reviews = ({ language }) => {
                     </div>
                   </div>
                   <div className={styles.reviewContent}>
-                    <p>{review.reviewText}</p>
+                    <p>{review.text}</p>
                   </div>
                 </div>
               ))}

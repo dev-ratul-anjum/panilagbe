@@ -126,9 +126,6 @@
 }
 
 .registerImage {
-  background: url('/images/register-background.jpg');
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;

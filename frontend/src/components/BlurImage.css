@@ -1,0 +1,13 @@
+.blur-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: blur(15px);
+    transition: filter 0.5s ease-in-out;
+    object-fit: cover;
+  }
+  
+  .blur-image.loaded {
+    filter: blur(0);
+  }
+  

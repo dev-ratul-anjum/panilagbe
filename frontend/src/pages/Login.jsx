@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Login.module.css';
+import BackgroundImage from '../components/BackgroundImage';
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Login = ({ language }) => {
@@ -170,10 +171,15 @@ const Login = ({ language }) => {
             <Link to="/register">{text[language].registerLink}</Link>
           </div>
         </div>
+
+        <BackgroundImage
+          src="images/login-bg.jpg"
+          placeholder="data:image/jpeg;base64,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"
+          className={styles.loginImage}
+        >
+
+        </BackgroundImage>
         
-        <div className={styles.loginImage}>
-          {/* This would typically be an image */}
-        </div>
       </div>
     </div>
   );
